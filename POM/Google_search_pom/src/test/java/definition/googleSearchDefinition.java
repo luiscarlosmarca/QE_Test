@@ -27,12 +27,12 @@ public class googleSearchDefinition {
         Google_search.search();
     }
     @Then("^I go to the search results page$")
-    public void i_go_to_the_search_results_page() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    public void i_go_to_the_search_results_page() {
+        Google_search.verify_page();
     }
 
-    @Then("^the first result is “The Name of the Wind - Patrick Rothfuss”$")
-    public void the_first_result_is_The_Name_of_the_Wind_Patrick_Rothfuss() throws Throwable {
+    @Then("^the first result is \"([^\"]*)\"$")
+    public void the_first_result_is(String arg1) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
     }
 
@@ -41,8 +41,10 @@ public class googleSearchDefinition {
         // Write code here that turns the phrase above into concrete actions
     }
 
-    @Then("^I go to the “Patrick Rothfuss - The Books” page$")
-    public void i_go_to_the_Patrick_Rothfuss_The_Books_page() throws Throwable {
+
+
+    @Then("^I go to the \"([^\"]*)\" page$")
+    public void i_go_to_the_page(String arg1) throws Throwable {
         // Write code here that turns the phrase above into concrete actions
     }
 
