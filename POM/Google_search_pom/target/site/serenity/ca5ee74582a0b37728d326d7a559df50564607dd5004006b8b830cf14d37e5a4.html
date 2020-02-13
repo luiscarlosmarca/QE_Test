@@ -77,7 +77,7 @@
             <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 13-02-2020 14:38</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 13-02-2020 15:51</span>
     <br style="clear:left"/>
 </div>
     <div class="clr"></div>
@@ -117,9 +117,9 @@
                 <table class="outcome-header">
                     <tr>
                         <td colspan="2" class="test-title-bar">
-                            <span class="outcome-icon"><i class='fa fa-square-o pending-icon fa-3x' title='PENDING'></i></span>
+                            <span class="outcome-icon"><i class='fa fa-exclamation-triangle error-icon fa-3x' title='ERROR'></i></span>
                             <span class="test-case-title">
-                                    <span class="pending-color">
+                                    <span class="error-color">
                                     User Can Search With &ldquo;Google Search&rdquo;
                                         <span class="related-issue-title"></span>
                                 </span>
@@ -153,26 +153,113 @@
                 <tr class="step-table-separator">
                     <td colspan="5"></td>
                 </tr>
-                <tr class="test-PENDING">
+                <tr class="test-ERROR">
                     <td width="60" class="step-icon">
                         <a name="0"/>
-                            <span style="margin-left: 20px; margin-right: 5px;"
-                                  class="top-level-icon"><i class='fa fa-square-o pending-icon ' title='PENDING'></i></span>
+                            <a href="javaScript:void(0)" onClick="toggleDiv('stepSection0')"
+                               style="display:block">
+                                <i class="fa fa-plus-square-o imgstepSection0 error-icon"
+                                   style="margin-left: 20px; float:left;  padding-right:5px"></i>
+                            </a>
                     </td>
                     <td>
                         <div class="step-description">
+                            <a href="javaScript:void(0)" onClick="toggleDiv('stepSection0')"
+                               style="display:block;">
                             <span class="top-level-step">Given I’m on the homepage</span>
+                            </a>
 
                         </div>
                     </td>
-                    <td width="100"><span class="top-level-step">PENDING</span></td>
-                    <td width="100"><span class="top-level-step">0s</span></td>
+                    <td width="100"><span class="top-level-step">ERROR</span></td>
+                    <td width="100"><span class="top-level-step">0.31s</span></td>
                 </tr>
-                <tr class="test-PENDING">
+                    <tr>
+                    <td colspan="5">
+                    <table id="stepSection0" style="display:none; width:100%">
+
+                <tr class="test-ERROR">
+                    <td width="60" class="step-icon">
+                        
+                            <span style="margin-left: 40px; margin-right: 5px;"
+                                  class="nested-group-icon"><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></span>
+                    </td>
+                    <td>
+                        <div class="step-description">
+                            <span class="nested-group-step">Into page</span>
+
+                        </div>
+                    </td>
+                    <td width="100"><span class="nested-group-step">ERROR</span></td>
+                    <td width="100"><span class="nested-group-step">0.13s</span></td>
+                </tr>
+                    <tr class="test-ERROR">
+                        <td width="40">&nbsp</td>
+                        <td width="%" colspan="4" class="error-message-cell">
+                            <div class="error-message ellipsis"
+                                 title='Unsupported driver exception: Could not instantiate class org.openqa.selenium.firefox.FirefoxDriver'>
+                                <pre>Unsupported driver exception: Could not instantiate class org.openqa.selenium.firefox.FirefoxDriver</pre>
+                            </div>
+                <div><!-- Stack trace -->
+                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                            data-target="#stacktraceModal-2">
+                        View stack trace
+                    </button>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="stacktraceModal-2" tabindex="-1" role="dialog"
+                     aria-labelledby="stacktraceModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"
+                                        aria-label="Close"><span aria-hidden="true">&times;</span>
+                                </button>
+                                <h4 class="modal-title" id="stacktraceModalLabel">
+                                net.thucydides.core.webdriver.UnsupportedDriverException
+                                </h4>
+                            </div>
+                            <div class="modal-body">
+                                    <h5>Could not instantiate class org.openqa.selenium.firefox.FirefoxDriver</h5>
+                                steps.googleSearchSteps.into_page(googleSearchSteps.java
+                                    :12) <br>
+                                definition.googleSearchDefinition.i_m_on_the_homepage(googleSearchDefinition.java
+                                    :16) <br>
+                            </div>
+
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"
+                                            aria-label="Close"><span aria-hidden="true">&times;</span>
+                                    </button>
+                                    <h4 class="modal-title" id="stacktraceModalLabel">
+                                    Caused by: net.thucydides.core.webdriver.UnsupportedDriverException
+                                    </h4>
+                                </div>
+                                <div class="modal-body">
+                                        <h5>Could not instantiate new WebDriver instance of type class org.openqa.selenium.firefox.FirefoxDriver (Cannot find firefox binary in PATH. Make sure firefox is installed. OS appears to be: MAC<br>Build info: version: '3.5.2', revision: '10229a9', time: '2017-08-21T17:29:55.15Z'<br>System info: host: 'MacBook-Pro-de-test.local', ip: 'fe80:0:0:0:18d0:a4e8:6038:19e6%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '1.8.0_221'<br>Driver info: driver.version: FirefoxDriver</h5>
+                                        steps.googleSearchSteps.into_page(googleSearchSteps.java :12) <br>
+                                        definition.googleSearchDefinition.i_m_on_the_homepage(googleSearchDefinition.java :16) <br>
+                                </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">
+                                    Close
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                        </td>
+                    </tr>
+
+                    </table>
+                    </td>
+                    <tr>
+                <tr class="test-SKIPPED">
                     <td width="60" class="step-icon">
                         <a name="1"/>
                             <span style="margin-left: 20px; margin-right: 5px;"
-                                  class="top-level-icon"><i class='fa fa-square-o pending-icon ' title='PENDING'></i></span>
+                                  class="top-level-icon"><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></span>
                     </td>
                     <td>
                         <div class="step-description">
@@ -180,14 +267,14 @@
 
                         </div>
                     </td>
-                    <td width="100"><span class="top-level-step">PENDING</span></td>
+                    <td width="100"><span class="top-level-step">SKIPPED</span></td>
                     <td width="100"><span class="top-level-step">0s</span></td>
                 </tr>
-                <tr class="test-PENDING">
+                <tr class="test-SKIPPED">
                     <td width="60" class="step-icon">
                         <a name="2"/>
                             <span style="margin-left: 20px; margin-right: 5px;"
-                                  class="top-level-icon"><i class='fa fa-square-o pending-icon ' title='PENDING'></i></span>
+                                  class="top-level-icon"><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></span>
                     </td>
                     <td>
                         <div class="step-description">
@@ -195,14 +282,14 @@
 
                         </div>
                     </td>
-                    <td width="100"><span class="top-level-step">PENDING</span></td>
+                    <td width="100"><span class="top-level-step">SKIPPED</span></td>
                     <td width="100"><span class="top-level-step">0s</span></td>
                 </tr>
-                <tr class="test-PENDING">
+                <tr class="test-SKIPPED">
                     <td width="60" class="step-icon">
                         <a name="3"/>
                             <span style="margin-left: 20px; margin-right: 5px;"
-                                  class="top-level-icon"><i class='fa fa-square-o pending-icon ' title='PENDING'></i></span>
+                                  class="top-level-icon"><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></span>
                     </td>
                     <td>
                         <div class="step-description">
@@ -210,14 +297,14 @@
 
                         </div>
                     </td>
-                    <td width="100"><span class="top-level-step">PENDING</span></td>
+                    <td width="100"><span class="top-level-step">SKIPPED</span></td>
                     <td width="100"><span class="top-level-step">0s</span></td>
                 </tr>
-                <tr class="test-PENDING">
+                <tr class="test-SKIPPED">
                     <td width="60" class="step-icon">
                         <a name="4"/>
                             <span style="margin-left: 20px; margin-right: 5px;"
-                                  class="top-level-icon"><i class='fa fa-square-o pending-icon ' title='PENDING'></i></span>
+                                  class="top-level-icon"><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></span>
                     </td>
                     <td>
                         <div class="step-description">
@@ -225,14 +312,14 @@
 
                         </div>
                     </td>
-                    <td width="100"><span class="top-level-step">PENDING</span></td>
+                    <td width="100"><span class="top-level-step">SKIPPED</span></td>
                     <td width="100"><span class="top-level-step">0s</span></td>
                 </tr>
-                <tr class="test-PENDING">
+                <tr class="test-SKIPPED">
                     <td width="60" class="step-icon">
                         <a name="5"/>
                             <span style="margin-left: 20px; margin-right: 5px;"
-                                  class="top-level-icon"><i class='fa fa-square-o pending-icon ' title='PENDING'></i></span>
+                                  class="top-level-icon"><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></span>
                     </td>
                     <td>
                         <div class="step-description">
@@ -240,14 +327,14 @@
 
                         </div>
                     </td>
-                    <td width="100"><span class="top-level-step">PENDING</span></td>
+                    <td width="100"><span class="top-level-step">SKIPPED</span></td>
                     <td width="100"><span class="top-level-step">0s</span></td>
                 </tr>
-                <tr class="test-PENDING">
+                <tr class="test-SKIPPED">
                     <td width="60" class="step-icon">
                         <a name="6"/>
                             <span style="margin-left: 20px; margin-right: 5px;"
-                                  class="top-level-icon"><i class='fa fa-square-o pending-icon ' title='PENDING'></i></span>
+                                  class="top-level-icon"><i class='fa fa-fast-forward skipped-icon ' title='SKIPPED'></i></span>
                     </td>
                     <td>
                         <div class="step-description">
@@ -255,13 +342,13 @@
 
                         </div>
                     </td>
-                    <td width="100"><span class="top-level-step">PENDING</span></td>
+                    <td width="100"><span class="top-level-step">SKIPPED</span></td>
                     <td width="100"><span class="top-level-step">0s</span></td>
                 </tr>
-                <tr class="test-PENDING">
+                <tr class="test-ERROR">
                     <td colspan="2"></td>
-                    <td width="100"><span class="top-level-step"><em>PENDING</em></span></td>
-                    <td width="100"><span class="top-level-step"><em>0.09s</em></span></td>
+                    <td width="100"><span class="top-level-step"><em>ERROR</em></span></td>
+                    <td width="100"><span class="top-level-step"><em>0.41s</em></span></td>
                 </tr>
 
             </table>
