@@ -4,28 +4,28 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.thucydides.core.annotations.Steps;
-import steps.googleSearchSteps;
+import steps.SearchGoogleSteps;
+
 public class googleSearchDefinition {
 
-    @Steps
-    googleSearchSteps googleSearchSteps;
 
+    @Steps
+    SearchGoogleSteps Google_search;
 
     @Given("^I’m on the homepage$")
     public void i_m_on_the_homepage() {
-        googleSearchSteps.into_page();
+        Google_search.into_page();
     }
 
-    @When("^I type “The name of the wind” into the search field$")
-    public void i_type_The_name_of_the_wind_into_the_search_field()  {
-        googleSearchSteps.search_in_google("The name of the wind");
+    @When("^I type \"([^\"]*)\" into the search field$")
+    public void i_type_The_name_of_the_wind_into_the_search_field(String words)  {
+        Google_search.type_the(words);
     }
 
     @When("^I click the Google Search button$")
-    public void i_click_the_Google_Search_button() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    public void i_click_the_Google_Search_button()  {
+        Google_search.search();
     }
-
     @Then("^I go to the search results page$")
     public void i_go_to_the_search_results_page() throws Throwable {
         // Write code here that turns the phrase above into concrete actions

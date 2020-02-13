@@ -3,21 +3,20 @@ package steps;
 import net.thucydides.core.annotations.Step;
 import pageobjects.GoogleHomePage;
 
-public class googleSearchSteps {
+public class SearchGoogleSteps {
 
     GoogleHomePage googlehomepage;
-
+    @Step
+    public void search(){
+        googlehomepage.search();
+    }
     @Step
     public void into_page(){
         googlehomepage.open();
     }
-
     @Step
-    public void search_in_google(String words){
-
-        googlehomepage.doSearch(words);
-
+    public void type_the(String words){
+        googlehomepage.type_words(words);
     }
-
 
 }
