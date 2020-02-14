@@ -6,13 +6,14 @@ import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
+import utils.WebFactory;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static utils.Constants.PAGE_HOME_GOOGLE;
 
 @DefaultUrl(PAGE_HOME_GOOGLE)
-public class GoogleHomePage extends PageObject {
+public class GoogleHomePage extends WebFactory {
 
 
     @FindBy(xpath = "//input[@name='q']")
@@ -27,18 +28,25 @@ public class GoogleHomePage extends PageObject {
     @FindBy(xpath = "//*[@id=\"rso\"]/div[1]/div/div[1]/div/div/div[1]/a/h3")
     public WebElementFacade FIRST_RESULT;
 
+    public GoogleHomePage(WebDriver webdriver) {
+        super(webdriver);
+    }
 
     public void type_words(String words){
-        TXT_BOX_SEARCH.sendKeys(words);
+        type(words,TXT_BOX_SEARCH);
     }
-
     public void search(){
-        BTN_SEARCH.click();
+        click(BTN_SEARCH);
     }
 
-    public void result(){
+    public void seeResults(){
         assertThat(LBL_RESULTS.isCurrentlyVisible(),is(true));
     }
+    public void seeAResult(String result){
+        assertThat(getText(FIRST_RESULT).contentEquals(result),is(true));
+        FIRST_RESULT.click();
+    }
+
 
 
 

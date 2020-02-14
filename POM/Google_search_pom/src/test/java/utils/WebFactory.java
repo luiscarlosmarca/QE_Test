@@ -1,11 +1,13 @@
 package utils;
 
+import net.serenitybdd.core.pages.PageObject;
+import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class WebFactory {
+public class WebFactory extends PageObject {
 
     private WebDriver webdriver;
 
@@ -34,12 +36,13 @@ public class WebFactory {
         return webdriver.findElement(locator).getText();
     }
 
-    public void type(String text, By locator){
-        webdriver.findElement(locator).sendKeys(text);
+    public void type(String text, WebElementFacade locator){
+        locator.sendKeys(text);
+
     }
 
-    public void click(By locator){
-        webdriver.findElement(locator).click();
+    public void click(WebElementFacade locator){
+        locator.click();
     }
 
     public Boolean isDisplayed(By locator){

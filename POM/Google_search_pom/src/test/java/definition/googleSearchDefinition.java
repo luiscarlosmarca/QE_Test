@@ -5,12 +5,23 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
+import org.junit.Before;
 import org.openqa.selenium.WebDriver;
+import pageobjects.GoogleHomePage;
 import steps.SearchGoogleSteps;
+
+import static utils.Constants.PAGE_HOME_GOOGLE;
 
 public class googleSearchDefinition {
 
-
+    GoogleHomePage pageGoogle;
+    private  WebDriver driver;
+    @Before
+    public void setup()throws Exception{
+        pageGoogle = new GoogleHomePage(driver);
+        driver=pageGoogle.chromeDriver();
+        pageGoogle.visit(PAGE_HOME_GOOGLE);
+    }
 
     @Steps
     SearchGoogleSteps Google_search;
@@ -35,19 +46,12 @@ public class googleSearchDefinition {
     }
 
     @Then("^the first result is \"([^\"]*)\"$")
-    public void the_first_result_is(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+    public void the_first_result_is(String result)  {
+        Google_search.verify_result(result);
     }
-
-    @When("^I click on the first result link$")
-    public void i_click_on_the_first_result_link() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-    }
-
-
 
     @Then("^I go to the \"([^\"]*)\" page$")
-    public void i_go_to_the_page(String arg1) throws Throwable {
+    public void i_go_to_the_page(String arg1)  {
         // Write code here that turns the phrase above into concrete actions
     }
 
