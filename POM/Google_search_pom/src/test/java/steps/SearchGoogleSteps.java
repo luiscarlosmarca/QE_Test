@@ -1,9 +1,13 @@
 package steps;
 
+import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Step;
+import org.openqa.selenium.WebDriver;
 import pageobjects.GoogleHomePage;
 
 public class SearchGoogleSteps {
+    @Managed(driver = "chrome", uniqueSession = true)
+    WebDriver driver;
 
     GoogleHomePage googlehomepage;
     @Step
