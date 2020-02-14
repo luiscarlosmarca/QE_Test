@@ -51,9 +51,21 @@ public class googleSearchDefinition {
     }
 
     @Then("^I go to the \"([^\"]*)\" page$")
-    public void i_go_to_the_page(String arg1)  {
-        // Write code here that turns the phrase above into concrete actions
+    public void i_go_to_the_page(String web)  {
+       Google_search.verify_web(web);
     }
+
+
+    @When("^the suggestions list is displayed$")
+    public void the_suggestions_list_is_displayed()  {
+        Google_search.verify_suggestion();
+    }
+
+    @When("^I click on the first suggestion in the list$")
+    public void i_click_on_the_first_suggestion_in_the_list()  {
+        Google_search.click_suggestion();
+    }
+
 
 
 }

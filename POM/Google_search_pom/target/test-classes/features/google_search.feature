@@ -9,8 +9,7 @@ Feature: Google Homepage Search
     And I click the Google Search button
     Then I go to the search results page
     And the first result is "The Name of the Wind - Patrick Rothfuss"
-    When I click on the first result link
-    Then I go to the "Patrick Rothfuss - The Books" page
+    And I go to the "Patrick Rothfuss - The Books" page
 
   @searchSuggestions
   Scenario: User can search by using the suggestions
@@ -20,5 +19,4 @@ Feature: Google Homepage Search
     And I click on the first suggestion in the list
     Then I go to the search results page
     And the first result is "The Name of the Wind - Patrick Rothfuss"
-    When I click on the first result link
-    Then I go to the "Patrick Rothfuss - The Books" page
+    And I go to the "Patrick Rothfuss - The Books" page

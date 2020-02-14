@@ -30,4 +30,23 @@ public class SearchGoogleSteps {
         googlehomepage.seeAResult(result);
     }
 
+
+    @Step
+    public void verify_web(String web){
+        googlehomepage.verifyWeb(web);
+    }
+
+    @Step
+    public void click_suggestion(){
+        googlehomepage.click_first_list();
+    }
+
+    @Step
+    public void verify_suggestion(){
+        googlehomepage.verify_first_list();
+    }
+
+
+
+
 }

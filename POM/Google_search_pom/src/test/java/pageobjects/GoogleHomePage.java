@@ -4,9 +4,12 @@ import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import utils.WebFactory;
+
+import java.util.List;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
@@ -28,10 +31,23 @@ public class GoogleHomePage extends WebFactory {
     @FindBy(xpath = "//*[@id=\"rso\"]/div[1]/div/div[1]/div/div/div[1]/a/h3")
     public WebElementFacade FIRST_RESULT;
 
+    @FindBy(xpath = "//title[contains(text(),'Patrick')]")
+    public WebElementFacade TITLE_WEB_SITE;
+
+    @FindBy(xpath="//div[@class='sbl1']")
+    public List<WebElementFacade> LIST_SUGGESTION;
+
+
     public GoogleHomePage(WebDriver webdriver) {
         super(webdriver);
     }
 
+    public void verify_first_list(){
+        assertThat(LIST_SUGGESTION.get(0).isCurrentlyVisible(),is(true));
+    }
+    public void click_first_list(){
+        click(LIST_SUGGESTION.get(0));
+    }
     public void type_words(String words){
         type(words,TXT_BOX_SEARCH);
     }
@@ -45,6 +61,10 @@ public class GoogleHomePage extends WebFactory {
     public void seeAResult(String result){
         assertThat(getText(FIRST_RESULT).contentEquals(result),is(true));
         FIRST_RESULT.click();
+    }
+
+    public void verifyWeb(String web){
+        assertThat(getText(TITLE_WEB_SITE).contentEquals(web),is(true));
     }
 
 
